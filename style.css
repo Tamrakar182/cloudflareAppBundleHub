@@ -1,0 +1,269 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+.content-container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    transition: transform 0.1s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card figure {
+    display: flex;
+    margin-left: 0.85rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.card figure img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.card-body {
+    flex: 1;
+    margin-left: 0.5rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+
+}
+
+.card-desc {
+    font-size: 0.9rem;
+}
+
+.see-more-btn {
+    margin-top: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mobile-first approach with more specific media queries */
+@media (max-width: 600px) {
+    .card {
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+
+    .card figure {
+        width: 60px;
+        height: 60px;
+    }
+
+    .card-body {
+        margin-left: 0;
+        /* Remove margin for smaller screens */
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-desc {
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .card {
+        padding: 1rem;
+    }
+
+    .card figure {
+        width: 50px;
+        height: 50px;
+    }
+
+    .card-title {
+        font-size: 1.05rem;
+    }
+
+    .card-desc {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 0.5rem;
+        /* Adjust padding for smaller screens */
+    }
+
+    .card-title {
+        font-size: 0.95rem;
+        /* Adjust font size */
+    }
+
+    .card-desc {
+        font-size: 0.8rem;
+        /* Adjust font size */
+    }
+}
+
+.app-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-content {
+
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.details-body {
+    margin-top: 2rem;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-action {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.error,
+.no-results {
+    text-align: center;
+    padding: 2rem;
+
+}
+
+/* Handle overflow text */
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Overflow handling for install commands */
+.install-section .code {
+    overflow: hidden;
+    position: relative;
+}
+
+.install-section .code pre {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.skeleton {
+    @apply animate-pulse bg-base-300;
+}
+
+
+.lds-ellipsis,
+.lds-ellipsis div {
+    box-sizing: border-box;
+}
+
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 33.33333px;
+    width: 13.33333px;
+    height: 13.33333px;
+    border-radius: 50%;
+    background: currentColor;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(24px, 0);
+    }
+}
